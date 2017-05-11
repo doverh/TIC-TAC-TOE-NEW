@@ -4,10 +4,14 @@ class Board
 	attr_accessor :board_table
 
 	#Create an empty array as a board
-	def initialize
-		@board_table = Array.new(9,"-")
+	def initialize(num)
+		@num = num
+		@board_table = Array.new(num * num,"-")
 	end
 
+	def getBoardDimension()
+		return @num
+	end	
 		
 	def setPosition(player, position)
 		board_table[position] = player.mark
@@ -19,21 +23,46 @@ class Board
 		return board_table[position]
 	end	
 
-	#Method to print board on screen
-	def printBoard()
-		puts"---------"
-		puts"0 #{board_table[0]}|#{board_table[1]}|#{board_table[2]}"
-		puts"1 #{board_table[3]}|#{board_table[4]}|#{board_table[5]}"
-		puts"2 #{board_table[6]}|#{board_table[7]}|#{board_table[8]}"
-		puts"  0 1 2"
-		puts"--------"
-
+	#Method to print a dinamic board on screen. 
+	#Num represents one side of the dimension, for example num=4 for 4X4 board
+	def printBoard(board,num)
+		
+		totalSize = num * num
+		lineSize = 0
+		dimension1 = 0
+		dimension2 = num
+		while(totalSize>lineSize)
+			puts ""
+			while(lineSize < dimension1)
+				print"#{board.board_table[lineSize]}|"
+				lineSize+=1
+			end	
+			dimension1+=dimension2	
+			
+		end
 	end
 
     
     #Check for a winner
-	def check_winner(player)
+	def check_winner(player,board)
 		
+		totalSize = num * num
+		lineSize = 0
+		dimension1 = 0
+		dimension2 = num
+		
+		dimension = board.getBoardDimension
+		while(totalSize>lineSize)
+			puts ""
+			while(lineSize < dimension1)
+				board_table[lineSize]}|"
+				lineSize+=1
+			end	
+			dimension1+=dimension2	
+			
+		end
+
+
 
 		 win_lines = [[board_table[0],board_table[1],board_table[2]],
 		 			[board_table[3],board_table[4],board_table[5]],
@@ -45,7 +74,7 @@ class Board
 					[board_table[2],board_table[4],board_table[6]]]
 
 		 	 win_lines.each do |winning_line|
-                if winning_line.count(player.mark) == 3
+                if winning_line.count(player.mark) == size
                 	return true
                 end
          	 end
