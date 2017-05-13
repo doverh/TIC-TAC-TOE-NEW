@@ -6,6 +6,10 @@ class Unbeatable_player
 	 	@mark = mark
 	 end
 
+	 def getHumanity
+		return false
+	end
+
 	 def getMove(board)
 
 	 	#Identify unbetable mark and player mark

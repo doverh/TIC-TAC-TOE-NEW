@@ -44,23 +44,18 @@ class Board
 
     
     #Check for a winner
-	def check_winner(player,board)
+	def check_winner(player)
 		
-		totalSize = num * num
-		lineSize = 0
-		dimension1 = 0
-		dimension2 = num
-		
-		dimension = board.getBoardDimension
-		while(totalSize>lineSize)
-			puts ""
-			while(lineSize < dimension1)
-				board_table[lineSize]}|"
-				lineSize+=1
-			end	
-			dimension1+=dimension2	
+		# dimension = board.getBoardDimension
+		# while(totalSize>lineSize)
+		# 	puts ""
+		# 	while(lineSize < dimension1)
+		# 		print"#{board.board_table[lineSize]}"
+		# 		lineSize+=1
+		# 	end	
+		# 	dimension1+=dimension2	
 			
-		end
+		# end
 
 
 
@@ -74,7 +69,7 @@ class Board
 					[board_table[2],board_table[4],board_table[6]]]
 
 		 	 win_lines.each do |winning_line|
-                if winning_line.count(player.mark) == size
+                if winning_line.count(player.mark) == 3
                 	return true
                 end
          	 end
@@ -116,9 +111,9 @@ class Board
 	#show results
 	def results(board,player1,player2)
 		if board.check_winner(player1) == true
-			finalResult = "Player1 won!"
+			finalResult = "Player 1 won!"
 		elsif board.check_winner(player2) == true
-			finalResult = "Computer won!"
+			finalResult = "Player 2 won!!"
 		elsif
 			board.isBoardFull == true
 			finalResult = "We have a tie!"

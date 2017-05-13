@@ -5,13 +5,15 @@
 <p>{{ name }} , choose a level to play this game:</p> -->
 </div>
 <form method="post" action="getLevel">  
-    <p>Level:
-      <select type="text" name="level" id="mySelect"> 
+  <p>Choose an opponent:</p>
+      <select type="text" name="player2" id="player2"> 
         <option value=""></option>
+        <option value="Human_player">Human</option>  
         <option value="Random_player">Easy</option>
         <option value="Sequential_player">Medium</option>
         <option value="Unbeatable_player">Hard</option>
       </select>
+
     <button type="submit" onclick="myFunction()">Play</button>
 
     </p>
@@ -28,10 +30,10 @@ You are playing against <%=session[:player2]%>!
 <table id='board'>
 <!-- 
 <div>
-  PLAYER WINS: <%=session[:playerWin]%>
+  YOU WINS! <%=session[:playerWin]%>
 </div>
 <div>
-COMPUTER WINS: <%=session[:computerWin]%>
+YOU LOST:! <%=session[:computerWin]%>
 </div> -->
 
 <tr>

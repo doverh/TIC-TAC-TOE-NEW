@@ -24,6 +24,10 @@ class Sequential_player
 		end
 	end
 
+	def getHumanity
+		return false
+	end
+
 
 	def getNextAvailablePosition(board)
 		position = board.index("-")

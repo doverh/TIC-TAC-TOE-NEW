@@ -15,6 +15,10 @@ class Random_player
 
 	end
 		
+	def getHumanity
+		return false
+	end	
+
 	def positionAvailable?(board,position)
 		if board[position] == "-"
 			return true

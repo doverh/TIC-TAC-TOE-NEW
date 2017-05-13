@@ -8,7 +8,18 @@ class Human_player
 		#@id = id
 	end
 
+	def getMove(board)
+		# puts ""
+		# puts "Player #{@mark} inform a position: "
+
+			# position = gets.chomp
+			# return position.to_i
+
+	end
 	
+	def getHumanity
+		return true
+	end
 
 	def positionAvailable?(board,position)
 		if board[position] == "-"
